@@ -1,0 +1,110 @@
+
+body {
+  background-color: #dae7f0;
+}
+
+#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#nav {
+  float: left;
+}
+
+#nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#nav a:hover {
+  background-color: #111;
+}
+
+#nav a:visited {
+  color: rgb(0, 204, 255)
+}
+
+#nav a:active {
+  color: rgb(186, 0, 223)
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+  height: auto;
+}
+
+#icon {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+body {
+  color: rgb(0, 0, 82);
+}
+
+
+h1 {
+  padding: 10px;
+  text-align: center;
+  background: #706a8b;
+  color: white;
+  font-size: 60px;
+  font-family: Arial;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #6578b6;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+#info {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  display: table;
+}
+
+#piclink {
+  text-align: center;
+}
+
+<!-- css help from w3schools -->
