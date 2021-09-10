@@ -1,0 +1,6 @@
+.*
+#glob all files starting with . and omit it
+docker-compose.yml
+#specified item
+*.md
+#omit any markdown
