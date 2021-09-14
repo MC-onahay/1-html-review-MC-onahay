@@ -13,11 +13,11 @@ body {
   background-color: #333;
 }
 
-#nav {
+.nav {
   float: left;
 }
 
-#nav a {
+.nav a {
   display: block;
   color: white;
   text-align: center;
@@ -25,21 +25,21 @@ body {
   text-decoration: none;
 }
 
-#nav a:hover {
+.nav a:hover {
   background-color: #111;
 }
 
-#nav a:visited {
+.nav a:visited {
   color: rgb(0, 204, 255)
 }
 
-#nav a:active {
+.nav a:active {
   color: rgb(186, 0, 223)
 }
 
 /* css for nav bar from w3schools */
 
-.center{
+#mainphoto{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -94,7 +94,7 @@ h2 {
   text-align: center;
 }
 
-#info {
+#personalinfo {
   text-align: center;
   list-style-type: none;
   margin: 0;
