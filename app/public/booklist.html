@@ -18,15 +18,16 @@
 </h1>
 
 <body>
-    <ul id="menu">
-        <li id="nav"><a href="index.html">Home</a></li>
-        <li id="nav"><a href="userinfo.html">User Info</a></li>
-        <li id="nav"><a href="booklist.html">Book List</a></li>
+    <ul class="menu">
+        <li class="nav"><a href="index.html">Home</a></li>
+        <li class="nav"><a href="userinfo.html">User Info</a></li>
+        <li class="nav"><a href="booklist.html">Book List</a></li>
     </ul>
 </body>
 
 <body>
   <table id="books">
+    <thead>
     <tr>
       <th>Title</th>
       <th>Author(s)</th>
@@ -34,6 +35,7 @@
       <th>Page Count</th>
       <th>MSRP</th>
     </tr>
+    </thead>
     <tr>
       <td>Bossypants</td>
       <td>Tina Fey</td>
@@ -88,6 +90,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form> 
-  
+  <script src="js/tablesort.min.js"></script>
+  <script>
+    new Tablesort(document.getElementById('books'));
+  </script>
 </body>
 </html>
