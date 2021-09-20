@@ -4,41 +4,6 @@ body {
   background-color: #dae7f0;
 }
 
-
-.menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-.nav {
-  float: left;
-}
-
-.nav a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  background-color: #111;
-}
-
-.nav a:visited {
-  color: rgb(0, 204, 255)
-}
-
-.nav a:active {
-  color: rgb(186, 0, 223)
-}
-
-/* css for nav bar from w3schools */
-
 #mainphoto{
   display: block;
   margin-left: auto;
