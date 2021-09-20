@@ -31,18 +31,30 @@
             <li class="nav-item">
               <a class="nav-link" href="booklist.html">Book List</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="rando.html">Random User</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
       <div class="row align-items-start">
-      
-        <div id="randoApp" >
-          <h1>New User</h1>
+        <div id="user" class="col col-4">
+          <h2>User Info</h2>
+          <a target="_blank" href="img/michaelcera.jpg">
+            <img id="icon" src="img/michaelcera.jpg" style="width:150px">
+          </a>
+          <center><cite id="piclink"><a href="https://www.reddit.com/r/donaldglover/comments/8f8nq4/because_the_internet_but_its_michael_cera/">Original Source</a></cite></center>
+        
+          <h2 id="name">Michael Cera</h2>
+          <ul id="personalinfo">
+            <li>Country of Origin: Canada</li>
+            <li>Birthdate: June 7, 1988</li>
+            <li>Age: 33</li>
+            <li>Email Address: <a href="mailto:michaelcera@example.com">michaelcera@example.com</a></li>
+          </ul>
+        </div>
+
+        <div id="randoApp" class="col col-8" >
+          <h1>Random User</h1>
           <form v-on:submit.prevent="fetchUserData">
             <button type="submit">Refresh</button>
           </form>
