@@ -1,5 +1,9 @@
 const Rando = {
-    
+    data() {
+        return {
+          "person": {},
+        }
+    },
     computed:{
         prettyBirthday(){
             return dayjs(this.person.dob.date)
