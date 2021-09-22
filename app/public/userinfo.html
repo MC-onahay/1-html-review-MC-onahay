@@ -46,7 +46,7 @@
         <a target="_blank" href="img/michaelcera.jpg">
           <img id="icon" src="img/michaelcera.jpg" style="width:150px">
         </a>
-        <center><cite id="piclink"><a href="https://www.reddit.com/r/donaldglover/comments/8f8nq4/because_the_internet_but_its_michael_cera/">Original Source</a></cite></center>
+        <cite id="piclink"><a href="https://www.reddit.com/r/donaldglover/comments/8f8nq4/because_the_internet_but_its_michael_cera/">Original Source</a></cite>
       
         <h2 id="name">Michael Cera</h2>
         <ul id="personalinfo">
@@ -62,14 +62,12 @@
         <form v-on:submit.prevent="fetchUserData">
           <button type="submit">Refresh</button>
         </form>
-        <p>{{ person.picture.large }}</p>
-        <p>{{ person.name.first }} {{ person.name.last }}</p>
-        <p>{{ person.location.country }}</p>
-        <p>{{ prettyBirthday }}</p>
-        <p>{{ person.dob.age }}</p>
-        <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
-        <p>{{ person }}</p>
-        
+        <p><img v-bind:src="person.picture.large"></p>
+        <p>Name: {{ person.name.first }} {{ person.name.last }}</p>
+        <p>Country of Origin: {{ person.location.country }}</p>
+        <p>Birthdate: {{ prettyBirthday }}</p>
+        <p>Age: {{ person.dob.age }}</p>
+        <p>Email: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
       </div>
 
     </div>
