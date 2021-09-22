@@ -62,8 +62,11 @@
         <form v-on:submit.prevent="fetchUserData">
           <button type="submit">Refresh</button>
         </form>
+        <p>{{ person.picture.large }}</p>
         <p>{{ person.name.first }} {{ person.name.last }}</p>
+        <p>{{ person.location.country }}</p>
         <p>{{ prettyBirthday }}</p>
+        <p>{{ person.dob.age }}</p>
         <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
         <p>{{ person }}</p>
         
