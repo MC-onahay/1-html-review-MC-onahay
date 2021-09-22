@@ -102,12 +102,24 @@ h2 {
   padding: 0;
 }
 
-form {
-  display: table;
+
+h3 {
+  text-align: center;
 }
+
+form {
+  text-align: center;
+  display: table;
+  max-width: 620px;
+  margin: auto;
+  padding: 10px;
+}
+
 
 #piclink {
   text-align: center;
 }
 
-
+.randoapp {
+  text-align: center;
+}
