@@ -32,23 +32,22 @@ while (true) {
 multi-line 
 comment */
 
-function printlist($somArr) {
+function printList($someArr) {
     echo "<ul>\n";
-    foreach($someArr as $key=>$val) {
-        echo "<li>".$key ." is ".$val."</li>\n";
+    foreach($someArr as $key => $val) {
+        echo "<li>".$key." is ".$val."</li>\n";
     }
-    echo "</ul\n>";
+    echo "</ul>\n";
 }
 
 printList($arr);
 printList($arr2);
 
-function printAndEncode( $val ) {
     echo json_encode(
-        $val, 
-        JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR
+        $arr2, 
+        JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR
     );
-}
+
 
 // ====
 // Naming conventions
