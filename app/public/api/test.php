@@ -34,7 +34,7 @@ comment */
 
 function printlist($somArr) {
     echo "<ul>\n";
-    foreach($arr as $key=>$val) {
+    foreach($someArr as $key=>$val) {
         echo "<li>".$key ." is ".$val."</li>\n";
     }
     echo "</ul\n>";
