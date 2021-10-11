@@ -42,8 +42,20 @@
   </nav>
 </body>
 
+<div id="bookApp" class="container">
+  <div class="row align-items-start">
+    <div class="col col-4">
+      <div class="books" v-for="b in books"
+        v-on:click="select Book (s)">
+        <span class="title">{{ b.title }}</span><br>
+        <span class="author">{{ b.author }}</span>
+      </div>
+    </div>
+    <div class="col col-8" v-if="selectedbook">
+      <h1>Details for {{selectedbook.title }}</h1>
 <body>
-  <table id="bookApp">
+ <!-- Original Table-->
+  <!-- <table id="bookApp">
     <thead>
     <tr>
       <th>Title</th>
@@ -57,54 +69,78 @@
       <td>Bossypants</td>
       <td>Tina Fey</td>
       <td>2011</td>
-      <td>250 pages</td>
-      <td>$9.00</td>
+      <td>250</td>
+      <td>9.00</td>
     </tr>
     <tr>
       <td>James Acaster's Classic Scrapes</td>
       <td>James Acaster</td>
       <td>2018</td>
-      <td>302 pages</td>
-      <td>$15.99</td>
+      <td>302</td>
+      <td>15.99</td>
     </tr>
     <tr>
       <td>The Wolf In CIO's Clothing</td>
       <td>Tina Nunno</td>
       <td>2015</td>
-      <td>212 pages</td>
-      <td>$15.61</td>
+      <td>212</td>
+      <td>15.61</td>
     </tr>
     <tr>
       <td>Year Book</td>
       <td>Seth Rogen</td>
       <td>2021</td>
-      <td>260 pages</td>
-      <td>$28.00</td>
+      <td>260</td>
+      <td>28.00</td>
     </tr>
+  </table> 
+  -->
+  
+  <table v-if="books.length">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author(s)</th>
+        <th>Year Published</th>
+        <th>Page Count</th>
+        <th>MSRP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="b in books">
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ b.publishyr }}</td>
+        <td>{{ b.pgcount }}</td>
+        <td>{{ b.msrp }}</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
+  
   <h3>Add New Book</h3>
   
   <form v-on:submit.prevent="postNewBook">
     <div class="mb-3">
-      <label for="bookTitle" class="form-label">Title</label>
-      <input type="text" v-model="bookForm.bookTitle"
-       class="form-control" id="bookTitle">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" v-model="bookForm.title"
+       class="form-control" id="title">
     </div>
     <div class="mb-3">
-      <label for="bookAuthor" class="form-label">Author</label>
-      <input type="text" v-model="bookForm.bookAuthor" class="form-control" id="bookAuthor">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" v-model="bookForm.author" class="form-control" id="author">
     </div>
     <div class="mb-3">
-      <label for="bookPublishYr" class="form-label">Bonus</label>
-      <input type="number" v-model="bookForm.bookPublishYr" class="form-control" id="bookPublishYr">
+      <label for="publishyr" class="form-label">Publish Year</label>
+      <input type="number" v-model="bookForm.publishyr" class="form-control" id="publishyr">
     </div>
     <div class="mb-3">
-      <label for="bookPgCount" class="form-label">Page Count</label>
-      <input type="number" v-model="bookForm.bookPgCount" class="form-control" id="bookPgCount">
+      <label for="pgcount" class="form-label">Page Count</label>
+      <input type="number" v-model="bookForm.pgcount" class="form-control" id="pgcount">
     </div>
     <div class="mb-3">
-      <label for="bookMSRP" class="form-label">MSRP</label>
-      <input type="" v-model="bookForm.bookMSRP" class="form-control" id="bookMSRP">
+      <label for="msrp" class="form-label">MSRP</label>
+      <input type="number" v-model="bookForm.msrp" class="form-control" id="msrp">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

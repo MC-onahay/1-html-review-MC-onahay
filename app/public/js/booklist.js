@@ -2,7 +2,7 @@ const BookList = {
     data() {
         return {
           "books": {},
-          "selectedBook": null,
+          "selectedbook": null,
         }
     },
 

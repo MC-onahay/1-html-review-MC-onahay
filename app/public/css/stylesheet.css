@@ -4,6 +4,14 @@ body {
   background-color: #dae7f0;
 }
 
+#piclink {
+  text-align: center;
+}
+
+#randoApp {
+  text-align: center;
+}
+
 #mainphoto{
   display: block;
   margin-left: auto;
@@ -116,8 +124,6 @@ form {
 }
 
 
-#piclink {
-  text-align: center;
-}
+
 
 

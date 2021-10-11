@@ -1,8 +1,8 @@
 const Rando = {
     data() {
         return {
-          "books": {},
-          "selectedBook": null,
+          "person": {
+          },
         }
     },
     computed:{
@@ -13,7 +13,7 @@ const Rando = {
     },
     methods:{
         fetchUserData(){
-            fetch('/api/books/'')
+            fetch('https://randomuser.me/api/')
             .then( response => response.json() )
             .then( (responseJson) => {
             console.log(responseJson);

@@ -10,22 +10,22 @@ $db = DbConnection::getConnection();
 
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Students';
+$sql = 'SELECT * FROM books';
 $vars = [];
 
-if (isset($_GET['studentID'])) {
-   // This is an example of a parameterized query
-    $sql = 'SELECT * FROM Patient WHERE studentId = ?';
-    $vars = [ $_GET['student'] ];
-}
+//if (isset($_GET['books'])) {
+//      This is an example of a parameterized query
+//      $sql = 'SELECT * FROM books WHERE title = ?';
+//      $vars = [ $_GET['books'] ];
+//}
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$books = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($books, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
