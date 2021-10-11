@@ -1,23 +1,18 @@
-const Rando = {
+const BookList = {
     data() {
         return {
           "books": {},
           "selectedBook": null,
         }
     },
-    computed:{
-        prettyBirthday(){
-            return dayjs(this.person.dob.date)
-            .format('D MMM YYYY')
-        }
-    },
+
     methods:{
-        fetchUserData(){
+        fetchBookData(){
             fetch('/api/books/'')
             .then( response => response.json() )
             .then( (responseJson) => {
             console.log(responseJson);
-            this.person = responseJson.results[0];
+            this.book = responseJson.results[0];
             })
         .catch( (err) => {
             console.error(err);
@@ -25,8 +20,8 @@ const Rando = {
         }
     },
     created() {
-        this.fetchUserData();
+        this.fetchBookData();
     } //end created
 } // end Offer config
   
-Vue.createApp(Rando).mount('#randoApp');
+Vue.createApp(BookList).mount('#bookApp');

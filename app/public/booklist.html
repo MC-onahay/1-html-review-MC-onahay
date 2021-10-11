@@ -43,7 +43,7 @@
 </body>
 
 <body>
-  <table id="books">
+  <table id="bookApp">
     <thead>
     <tr>
       <th>Title</th>
@@ -84,29 +84,31 @@
   </table>
   <h3>Add New Book</h3>
   
-  <form id=newbook>
-    <div class="form-group">
-      <label for="title">Title:</label><br>
-      <input type="text" class="form-control" id="formGroupExampleInput">
+  <form v-on:submit.prevent="postNewBook">
+    <div class="mb-3">
+      <label for="bookTitle" class="form-label">Title</label>
+      <input type="text" v-model="bookForm.bookTitle"
+       class="form-control" id="bookTitle">
     </div>
-    <div class="form-group">
-      <label for="author"> Author:</label><br>
-      <input type="text" class="form-control" id="formGroupExampleInput2">
+    <div class="mb-3">
+      <label for="bookAuthor" class="form-label">Author</label>
+      <input type="text" v-model="bookForm.bookAuthor" class="form-control" id="bookAuthor">
     </div>
-    <div class="form-group">
-      <label for="publishyr">Year Pubished:</label><br>
-      <input type="text" class="form-control" id="formGroupExampleInput">
+    <div class="mb-3">
+      <label for="bookPublishYr" class="form-label">Bonus</label>
+      <input type="number" v-model="bookForm.bookPublishYr" class="form-control" id="bookPublishYr">
     </div>
-    <div class="form-group">
-      <label for="pgcount"> Page Count:</label><br>
-      <input type="text" class="form-control" id="formGroupExampleInput2">
+    <div class="mb-3">
+      <label for="bookPgCount" class="form-label">Page Count</label>
+      <input type="number" v-model="bookForm.bookPgCount" class="form-control" id="bookPgCount">
     </div>
-    <div class="form-group">
-      <label for="msrp"> MSRP:</label><br>
-      <input type="text" class="form-control" id="formGroupExampleInput2">
+    <div class="mb-3">
+      <label for="bookMSRP" class="form-label">MSRP</label>
+      <input type="" v-model="bookForm.bookMSRP" class="form-control" id="bookMSRP">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form> 
+  </form>
+
   <script src="js/tablesort.min.js"></script>
   <script>
     new Tablesort(document.getElementById('books'));
