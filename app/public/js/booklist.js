@@ -1,21 +1,20 @@
 const BookList = {
     data() {
         return {
-          "books": {},
-          "selectedbook": null,
+          "books": [],
         }
     },
 
     methods:{
         fetchBookData(){
-            fetch('/api/books/'')
+            fetch('/api/books/')
             .then( response => response.json() )
-            .then( (responseJson) => {
-            console.log(responseJson);
-            this.book = responseJson.results[0];
+            .then( (parsedJson) => {
+            console.log(parsedJson);
+            this.books = parsedJson
             })
         .catch( (err) => {
-            console.error(err);
+            console.error(err)
             })
         }
     },
