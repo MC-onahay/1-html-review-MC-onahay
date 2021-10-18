@@ -42,17 +42,17 @@
   </nav>
 </body>
 <!-- extra info side bar-->
-<!-- <div id="bookApp" class="container">
-  <div class="row align-items-start">
-    <div class="col col-4">
-      <div class="books" v-for="b in books"
+  <!-- <div id="bookApp" class="container">
+    <div class="row align-items-start">
+     <div class="col col-4">
+       <div class="books" v-for="b in books"
         v-on:click="select books">
         <span class="title">{{ b.title }}</span><br>
         <span class="author">{{ b.author }}</span>
+       </div>
       </div>
-    </div>
-    <div class="col col-8" v-if="selectedbook">
-      <h1>Details for {{selectedbook.title }}</h1>
+      <div class="col col-8" v-if="selectedbook">
+        <h1>Details for {{selectedbook.title }}</h1>
 <body>
 -->
  <!-- Original Table-->
@@ -123,7 +123,7 @@
 
   <h3>Add New Book</h3>
   
- <!-- <form v-on:submit.prevent="postNewBook">
+<form v-on:submit.prevent="postNewBook">
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
       <input type="text" v-model="bookForm.title"
@@ -147,8 +147,8 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
--->
 
+  
 </div>
  
    <script src="js/tablesort.min.js"></script>
