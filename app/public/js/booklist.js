@@ -13,23 +13,26 @@ const BookList = {
              return "$ " + d;
         },
     
-        fetchBookData(){
-            fetch('/api/books/')
-            .then( response => response.json() )
-            .then( (parsedJson) => {
-                console.log(parsedJson);
-                this.books = parsedJson
-            })
-            .catch( (err) => {
-                console.error(err);
-            })
-        },
+    fetchBookData(){
+        fetch('/api/books/')
+        .then( response => response.json() )
+        .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson
+        })
+        .catch( (err) => {
+            console.error(err);
+        })
+        .catch( (error) => {
+            console.error(error);
+        });
+    },
     postNewBook(evt) {
-        this.bookForm.books.ID = this.bookForm.books.ID;        
+        //this.bookForm.id = this.bookForm.id;        
         
         console.log("Posting!", this.bookForm);
 
-        fetch('api/offer/create.php', {
+        fetch('api/books/create.php', {
             method:'POST',
             body: JSON.stringify(this.bookForm),
             headers: {
@@ -46,7 +49,7 @@ const BookList = {
             this.bookForm = {};
           });
       }
-  },
+    },
     created() {
         this.fetchBookData();
     } //end created

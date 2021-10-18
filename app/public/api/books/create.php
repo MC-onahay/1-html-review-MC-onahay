@@ -21,12 +21,11 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO books (id, title, author, publishyr, pgcount, msrp)
-  VALUES (?, ?, ?, ?, ?, ?)'
+  'INSERT INTO books ( title, author, publishyr, pgcount, msrp)
+  VALUES (?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['id'],
   $_POST['title'],
   $_POST['author'],
   $_POST['publishyr'],
@@ -40,4 +39,4 @@ $stmt->execute([
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('<Location:../?books=' . $_POST['id']);
+header('Location: ../books/');
