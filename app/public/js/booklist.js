@@ -2,6 +2,7 @@ const BookList = {
     data() {
         return {
           "books": [],
+          bookForm: {}
         }
     },
 
@@ -16,16 +17,15 @@ const BookList = {
             fetch('/api/books/')
             .then( response => response.json() )
             .then( (parsedJson) => {
-            console.log(parsedJson);
-            this.books = parsedJson
+                console.log(parsedJson);
+                this.books = parsedJson
             })
-        .catch( (err) => {
-            console.error(err)
+            .catch( (err) => {
+                console.error(err);
             })
-        }
-    },
+        },
     postNewBook(evt) {
-        this.bookForm.bID = this.selectedStudent.bID;        
+        this.bookForm.books.ID = this.bookForm.books.ID;        
         
         console.log("Posting!", this.bookForm);
 
