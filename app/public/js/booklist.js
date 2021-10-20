@@ -48,8 +48,38 @@ const BookList = {
             // reset the form
             this.bookForm = {};
           });
-      }
     },
+    postEditBook(evt) {
+        this.bookForm.id = this.selectedBook.id;
+
+        console.log("Updating!", this.bookForm);
+
+        fetch('api/books/update.php', {
+            method:'POST',
+            body: JSON.stringify(this.bookForm),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            // TODO: test a result was returned!
+            this.books = json;
+
+            // reset the form
+            this.resetbookForm();
+          });
+      },
+      selectBookToEdit(o) {
+          this.selectedBook = o;
+          this.bookForm = Object.assign({}, this.selectedBook);
+      },
+      resetOfferForm() {
+          this.selectedBook = null;
+          this.bookForm = {};
+      }
+  },
     created() {
         this.fetchBookData();
     } //end created

@@ -25,3 +25,4 @@ INSERT INTO books (id, title, author, publishyr, pgcount, msrp) VALUES
 
 -- CREATE USER 'msisreader'@'%' IDENTIFIED BY 'msisreadonly';
 -- GRANT SELECT ON * . * TO 'msisreader'@'%';
+USE dshomework; SELECT * FROM books
