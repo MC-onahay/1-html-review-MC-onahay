@@ -2,16 +2,17 @@
 <?php
 
 try {
-    $_POST = json_decode(
-                file_get_contents('php://input'), 
-                true,
-                2,
-                JSON_THROW_ON_ERROR
-            );
+  $_POST = json_decode(
+              file_get_contents('php://input'), 
+              true,
+              2,
+              JSON_THROW_ON_ERROR
+          );
 } catch (Exception $e) {
-    header($_SERVER["SERVER_PROTOCOL"] . " 400 Bad Request");
-
-    exit;
+  header($_SERVER["SERVER_PROTOCOL"] . " 400 Bad Request");
+  // print_r($_POST);
+  // echo file_get_contents('php://input');
+  exit;
 }
 
 require("class/DbConnection.php");

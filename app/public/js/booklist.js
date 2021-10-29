@@ -54,7 +54,7 @@ const BookList = {
           });
         },
         postEditBook(evt) {
-
+          this.bookForm.id = this.selectedBook.id
           console.log("Updating!", this.bookForm);
 
           fetch('api/books/update.php', {
