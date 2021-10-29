@@ -109,27 +109,27 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="b in books">
-        <td>{{ b.title }}</td>
-        <td>{{ b.author }}</td>
-        <td>{{ b.publishyr }}</td>
-        <td>{{ b.pgcount }}</td>
-        <td>{{ prettyDollar(b.msrp) }}</td>
+      <tr v-for="book in books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.publishyr }}</td>
+        <td>{{ book.pgcount }}</td>
+        <td>{{ prettyDollar(book.msrp) }}</td>
         <td></td>
         <td>
           <button type="button" 
             class="btn btn-outline-secondary btn-sm"
-            v-on:click="selectBookToEdit(b)">Edit</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+            v-on:click="selectBookToEdit(book)">Edit</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm"
+            v-on:click="postDeleteBook(book)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
 
 
-  <h3>Add New Book</h3>
-  <!-- {{ selectedBook === null ? "Add " : "Edit " }} -->
-<form v-on:submit.prevent="postNewBook">
+  <h3>{{ selectedBook === null ? "Add " : "Edit " }} Book</h3>
+<form v-on:submit.prevent="postBook">
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
       <input type="text" v-model="bookForm.title"
@@ -151,9 +151,8 @@
       <label for="msrp" class="form-label">MSRP</label>
       <input type="number" v-model="bookForm.msrp" class="form-control" id="msrp">
     </div>
-    <button type="submit" class="btn btn-primary">Add Book</button>
-    <!-- {{ selectedBook === null ? "Add " : "Edit " }} -->
-    <button type="button" class="btn btn-outline-secondary" v-if="selectedBook" v-on:click="resetbookForm">Cancel</button>
+    <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
+    <button type="button" class="btn btn-outline-secondary" v-if="selectedBook" v-on:click="resetBookForm">Cancel</button>
   </form>
 
   

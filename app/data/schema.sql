@@ -7,7 +7,7 @@ USE dshomework;
 DROP TABLE IF EXISTS books;
 CREATE TABLE books (
 	id int PRIMARY KEY AUTO_INCREMENT ,
-    title varchar(48) NOT NULL,
+    title varchar(48),
     author varchar(48),
     publishyr int,
     pgcount int,

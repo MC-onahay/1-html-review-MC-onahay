@@ -10,34 +10,39 @@ try {
             );
 } catch (Exception $e) {
     header($_SERVER["SERVER_PROTOCOL"] . " 400 Bad Request");
-    // print_r($_POST);
+
     exit;
 }
 
 require("class/DbConnection.php");
 
+// Step 0: Validate the incoming data
+// This code doesn't do that, but should ...
+// For example, if the date is empty or bad, this insert fails.
 
-// Step 1: Get a datase connection
+// Step 1: Get a datase connection from our helper class
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
+// Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-    'UPDATE books SET
+  'UPDATE books SET
     title = ?,
     author = ?,
     publishyr = ?,
-    pgcount = ?,
-    msrp = ?,
-    where id = ?'
+    pgcount= ?,
+    msrp =?
+  WHERE id = ?'
 );
 
 $stmt->execute([
-  $_POST['title'],
-  $_POST['author'],
-  $_POST['publishyr'],
-  $_POST['pgcount'],
-  $_POST['msrp']
-]);
+    $_POST['title'],
+    $_POST['author'],
+    $_POST['publishyr'],
+    $_POST['pgcount'],
+    $_POST['msrp'],
+    $_POST['id']
+  ]);
 
 //Get auto-generated PK from DB
 //https://www.php.net/manual/en/pdo.lastinsertid.php
